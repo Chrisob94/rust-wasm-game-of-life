@@ -83,7 +83,8 @@ impl Universe {
         let mut cells = FixedBitSet::with_capacity(size);
 
         for i in 0..size {
-            // cells.set(i, i % 2 == 0 || i % 7 == 0);
+            // Setting a coin flip here to generate randomly based on chance
+            // Each cell has a 50/50 chance of Being Alive or Dead
             if js_sys::Math::random() < 0.5 {
                 cells.set(i, true);
             } else {
